@@ -14,6 +14,8 @@ namespace snippets
             Solution solution = new Solution();
             Console.WriteLine(solution.AddDigits(38));
 
+            solution.IsPalindrome("rat", "car");
+            solution.IsPalindrome("anagram", "margana");
             Console.ReadLine();
         }
     }
@@ -39,6 +41,16 @@ namespace snippets
             } while (sum > 9);
             
             return sum;
+        }
+
+        public bool IsPalindrome(string s, string t)
+        {
+            char[] array = t.ToCharArray();
+            Array.Reverse(array);
+            if (new String(array) == s)
+                return true;
+            else
+                return false;
         }
     }
 }
