@@ -19,6 +19,7 @@ namespace snippets
     }
 
     // Add Digits algorithm exercise
+    // leetcode.com/problems/add-digits
     public class Solution
     {
         public int AddDigits(int num)
@@ -35,7 +36,7 @@ namespace snippets
                     sum += y;
                 }
                 n = sum;
-            } while (sum > 10);
+            } while (sum > 9);
             
             return sum;
         }
