@@ -10,6 +10,34 @@ namespace snippets
     {
         static void Main(string[] args)
         {
+            // Add Digits algorithm exercise
+            Solution solution = new Solution();
+            Console.WriteLine(solution.AddDigits(38));
+
+            Console.ReadLine();
+        }
+    }
+
+    // Add Digits algorithm exercise
+    public class Solution
+    {
+        public int AddDigits(int num)
+        {
+            int n = num, sum;
+
+            do
+            {
+                sum = 0;
+                while (n != 0)
+                {
+                    int y = n % 10;
+                    n /= 10;
+                    sum += y;
+                }
+                n = sum;
+            } while (sum > 10);
+            
+            return sum;
         }
     }
 }
