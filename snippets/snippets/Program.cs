@@ -59,38 +59,24 @@ namespace snippets
         public bool IsAnagram(string s, string t)
         {
             
-            s = s.Replace(" ", "");
-            t = t.Replace(" ", "");
-
-            char[] array1 = s.ToCharArray();
-            char[] array2 = t.ToCharArray();
+            char[] array1 = s.ToArray();
+            char[] array2 = t.ToArray();
 
             if (array1.Length != array2.Length)
                 return false;
 
-            for (int i = 0; i < array1.Length; i++)
-            {
-                for (int j = 0; j < array2.Length; j++)
-                {
-                    if (array1[i] == array2[j])
-                    {
-                        array2 = array2.Where((source, index) => index != j).ToArray();
-                        continue;
-                    }
-                    if (j == array2.Length)
-                        break;
-                }
-            }
+            Array.Sort(array1);
+            Array.Sort(array2);
 
-            if (array2.Length != 0)
-            {
-                Console.WriteLine("Not anagram");
-                return false;
-            }
-            else
+            if (array1.SequenceEqual(array2))
             {
                 Console.WriteLine("Is anagram");
                 return true;
+            }
+            else
+            {
+                Console.WriteLine("Not anagram");
+                return false;
             }
         }
     }
