@@ -19,7 +19,6 @@ namespace snippets
 
             solution.IsAnagram("anagram", "nagaram");
             solution.IsAnagram("rat", "car");
-            solution.IsAnagram("arto toppi", "port patio");
             Console.ReadLine();
         }
     }
