@@ -77,6 +77,8 @@ namespace snippets
                         array2 = array2.Where((source, index) => index != j).ToArray();
                         continue;
                     }
+                    if (j == array2.Length)
+                        break;
                 }
             }
 
